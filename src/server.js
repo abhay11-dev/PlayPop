@@ -1,11 +1,42 @@
-import express from "express";
+// import express from "express";
+// import mongoose from "mongoose";
+// import dotenv from "dotenv";
+// import { DB_NAME } from "./constants.js";
 
-const app = express();
+// dotenv.config();
 
-app.get("/",(req,res)=>{
-    res.send("Hello, World!, I am using ES6 Modules");
-});
+// const app = express();
 
-app.listen(3000,()=>{
-    console.log("Server is running on port 3000");
-});
+// const startServer = async () => {
+//     try {
+//         const mongoURI = `${process.env.MONGODB_URI}/${DB_NAME}`;
+
+//         await mongoose.connect(mongoURI);
+//         console.log("Connected to MongoDB");
+
+//         const server = app.listen(process.env.PORT || 8000, () => {
+//             console.log(`🚀 Server running on port ${process.env.PORT || 8000}`);
+//         });
+
+//         server.on("error", (err) => {
+//             console.error(" Server failed to start:", err);
+//             process.exit(1);
+//         });
+
+//     } catch (err) {
+//         console.error("MongoDB connection failed:", err);
+//         process.exit(1); 
+//     }
+// };
+
+// startServer();
+
+
+
+
+import dotenv from "dotenv";
+dotenv.config();
+
+import connectDB from "../src/db/index.js";
+
+connectDB();
