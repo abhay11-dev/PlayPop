@@ -14,4 +14,15 @@ app.use(express.json({limit: '10kb'})); // To parse JSON bodies
 app.use(express.urlencoded({ extended: true , limit:'10kb'})); // To parse URL-encoded bodies
 app.use(express.static('public')); // To serve static files
 app.use(cookieParser()); // To parse cookies
-export default app;
+
+
+
+//routes
+import userRouter from './routes/user.routes.js';
+
+
+//routes declaration
+app.use("/api/v1/users",userRouter);
+
+
+export {app};
